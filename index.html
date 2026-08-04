@@ -27,10 +27,10 @@
   .hero { text-align: center; padding: 2.5rem 0 2rem; }
   .avatar {
     width: 110px; height: 110px; border-radius: 50%;
-    background: linear-gradient(135deg, #38bdf8, #6366f1);
-    display: inline-flex; align-items: center; justify-content: center;
-    font-size: 2.6rem; font-weight: 700; color: #fff; margin-bottom: 1.2rem;
+    overflow: hidden; margin: 0 auto 1.2rem;
+    border: 3px solid rgba(56,189,248,.5);
   }
+  .avatar img { width: 100%; height: 100%; object-fit: cover; display: block; }
   h1 { font-size: 2rem; font-weight: 700; letter-spacing: 1px; }
   .title { color: var(--accent); margin-top: .4rem; font-size: 1.05rem; }
   .loc { color: var(--muted); font-size: .9rem; margin-top: .4rem; }
@@ -68,7 +68,7 @@
 <div class="wrap">
 
   <div class="hero">
-    <div class="avatar">向</div>
+    <div class="avatar"><img src="avatar.jpg" alt="向忠"></div>
     <h1>向忠</h1>
     <div class="title">建筑施工图审查专家 · AI 审图</div>
     <div class="loc">📍 中国 · 成都</div>
