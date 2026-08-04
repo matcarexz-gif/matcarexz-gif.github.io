@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>向忠 · 建筑施工图审查专家</title>
+<meta name="description" content="向忠 — 建筑施工图审查与 AI 审图专家。基于成都，服务于全国。">
+<style>
+  :root {
+    --bg: #0f172a;
+    --bg2: #1e293b;
+    --fg: #e2e8f0;
+    --muted: #94a3b8;
+    --accent: #38bdf8;
+    --card: rgba(30, 41, 59, 0.6);
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "PingFang SC", "Microsoft YaHei", sans-serif;
+    background: var(--bg);
+    color: var(--fg);
+    line-height: 1.7;
+    min-height: 100vh;
+  }
+  .wrap { max-width: 760px; margin: 0 auto; padding: 3rem 1.5rem 4rem; }
+  /* Hero */
+  .hero { text-align: center; padding: 2.5rem 0 2rem; }
+  .avatar {
+    width: 110px; height: 110px; border-radius: 50%;
+    background: linear-gradient(135deg, #38bdf8, #6366f1);
+    display: inline-flex; align-items: center; justify-content: center;
+    font-size: 2.6rem; font-weight: 700; color: #fff; margin-bottom: 1.2rem;
+  }
+  h1 { font-size: 2rem; font-weight: 700; letter-spacing: 1px; }
+  .title { color: var(--accent); margin-top: .4rem; font-size: 1.05rem; }
+  .loc { color: var(--muted); font-size: .9rem; margin-top: .4rem; }
+  .tagline { color: var(--muted); margin-top: 1.2rem; max-width: 560px; margin-left: auto; margin-right: auto; }
+  /* Sections */
+  section { margin-top: 2.6rem; }
+  h2 {
+    font-size: 1.05rem; color: var(--accent); margin-bottom: 1rem;
+    display: flex; align-items: center; gap: .5rem;
+  }
+  h2::after { content: ""; flex: 1; height: 1px; background: rgba(148,163,184,.25); }
+  .cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(210px, 1fr)); gap: 1rem; }
+  .card {
+    background: var(--card); border: 1px solid rgba(148,163,184,.15);
+    border-radius: 12px; padding: 1.1rem 1.2rem; transition: transform .15s;
+  }
+  .card:hover { transform: translateY(-2px); border-color: rgba(56,189,248,.4); }
+  .card b { display: block; margin-bottom: .3rem; color: #f1f5f9; }
+  .card span { color: var(--muted); font-size: .88rem; }
+  /* About */
+  .about { color: var(--fg); background: var(--card); border: 1px solid rgba(148,163,184,.15); border-radius: 12px; padding: 1.2rem 1.4rem; font-size: .95rem; }
+  .about p + p { margin-top: .6rem; }
+  /* Contact */
+  .contact { display: flex; flex-wrap: wrap; gap: .8rem; justify-content: center; margin-top: 1.4rem; }
+  .btn {
+    display: inline-block; padding: .6rem 1.4rem; border-radius: 999px;
+    background: rgba(56,189,248,.12); border: 1px solid rgba(56,189,248,.4);
+    color: var(--accent); text-decoration: none; font-size: .9rem; transition: all .15s;
+  }
+  .btn:hover { background: rgba(56,189,248,.25); }
+  footer { text-align: center; color: var(--muted); font-size: .8rem; margin-top: 3rem; }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <div class="hero">
+    <div class="avatar">向</div>
+    <h1>向忠</h1>
+    <div class="title">建筑施工图审查专家 · AI 审图</div>
+    <div class="loc">📍 中国 · 成都</div>
+    <p class="tagline">深耕建筑施工图设计审查领域，专注建筑、结构、给排水、电气、暖通多专业合规审查，以 AI 技术驱动审图效率与质量。</p>
+  </div>
+
+  <section>
+    <h2>专业领域</h2>
+    <div class="cards">
+      <div class="card"><b>施工图审查</b><span>建筑/结构/给排水/电气/暖通全专业合规性审查</span></div>
+      <div class="card"><b>AI 智能审图</b><span>AI 辅助设计文件审查平台，自动分类、逐项核查规范符合性</span></div>
+      <div class="card"><b>规范咨询</b><span>消防、节能、绿色建筑等专项设计与合规咨询</span></div>
+      <div class="card"><b>项目管理</b><span>设计团队管理与项目进度、质量控制</span></div>
+    </div>
+  </section>
+
+  <section>
+    <h2>关于我</h2>
+    <div class="about">
+      <p>毕业于建筑学专业，多年建筑施工图设计与管理经验，曾任设计公司总经理，带领团队完成大量住宅、公建项目的施工图设计与审查。</p>
+      <p>近年专注于将 AI 大模型技术应用于审图行业，自研 AI 审图工作流，覆盖图纸提取、规范比对、问题报告生成全流程，显著提升审查效率与准确率。</p>
+    </div>
+  </section>
+
+  <section>
+    <h2>联系我</h2>
+    <div class="contact">
+      <a class="btn" href="mailto:your-email@example.com">📧 电子邮箱</a>
+      <a class="btn" href="https://github.com/matcarexz-gif" target="_blank">🐙 GitHub</a>
+    </div>
+  </section>
+
+  <footer>© 2026 向忠 · Built with GitHub Pages</footer>
+</div>
+</body>
+</html>
