@@ -1,0 +1,8 @@
+# 大文件不入库（767MB 原始 PPT 和未压缩原图）
+zhouyu.pptx
+raw/
+test_*.jpg
+test_*.jpeg
+test_*.png
+*.applescript
+convert*.applescript
