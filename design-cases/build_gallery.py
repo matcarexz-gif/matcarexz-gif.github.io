@@ -31,6 +31,8 @@ CATS = [
     ('BIM与数字化', [104,105,106,107,108,109,110,111,112]),
 ]
 DIVIDERS = {21, 24, 25, 30, 43, 54, 99}
+# 用户要求删除的案例
+EXCLUDE = {101}  # 万达·红旗首家概念展厅
 
 def meta_line(p):
     """生成卡片信息行"""
@@ -68,7 +70,7 @@ SLIDES_DIR = '/Users/xiangzhong/Projects/personal-site/design-cases/slides'
 for cat, slides in CATS:
     items = []
     for s in slides:
-        if s not in projects or s in DIVIDERS: continue
+        if s not in projects or s in DIVIDERS or s in EXCLUDE: continue
         has_img = os.path.exists(os.path.join(SLIDES_DIR, f'S{s:03d}.jpg'))
         items.append(card_html(projects[s], has_img))
     if not items: continue
