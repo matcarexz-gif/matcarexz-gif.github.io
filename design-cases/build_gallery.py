@@ -22,17 +22,25 @@ fix_title = {
 CATS = [
     ('规划与城市设计', [1,2,3,4,5,6]),
     ('城市更新与改造', [8,9,10,11,12]),
-    ('商业与综合体', [7,13,14,15,16,17,18,19,22,23,26,27,28,29,32,38,44,63,64,65,70,77,78,80,88,96,101]),
-    ('产业园区与办公', [31,33,34,35,36,37,39,40,41,42,74,79,91,94,95,98]),
-    ('居住建筑', [51,52,53,55,56,57,58,59,60,61,62,66,67,68,69,71,72,73,75,76,81,82,83,84,85,86,87]),
+    ('商业与综合体', [7,13,14,15,16,17,18,19,22,23,26,27,28,29,32,38,44,64,65,70,77,78,80,88,96,101]),
+    ('产业园区与办公', [31,33,34,35,36,37,39,40,41,42,74,79,91,94,95]),
+    ('居住建筑', [51,52,53,55,56,57,58,59,60,61,63,66,67,68,69,71,72,73,75,76,81,82,83,84,85,86,87]),
     ('文旅·酒店·公建', [20,45,46,47,48,49,50,92,93,97,102]),
-    ('幕墙与专项', [89,90]),
+    ('景观设计', [62,98]),
+    ('幕墙设计', [89,90]),
     ('室内设计', [100,103]),
     ('BIM与数字化', [104,105,106,107,108,109,110,111,112]),
 ]
 DIVIDERS = {21, 24, 25, 30, 43, 54, 99}
 # 用户要求删除的案例
 EXCLUDE = {101}  # 万达·红旗首家概念展厅
+
+def year_of(p):
+    """从设计时间提取年份, 无年份返回 None"""
+    import re
+    t = p['fields'].get('设计时间', '')
+    m = re.search(r'(19|20)\d{2}', t)
+    return int(m.group(0)) if m else None
 
 def meta_line(p):
     """生成卡片信息行"""
@@ -72,10 +80,11 @@ for cat, slides in CATS:
     for s in slides:
         if s not in projects or s in DIVIDERS or s in EXCLUDE: continue
         has_img = os.path.exists(os.path.join(SLIDES_DIR, f'S{s:03d}.jpg'))
-        items.append(card_html(projects[s], has_img))
+        items.append((year_of(projects[s]) or 9999, s, card_html(projects[s], has_img)))
     if not items: continue
+    items.sort(key=lambda t: (t[0], t[1]))  # 按年份升序, 无年份排最后
     total += len(items)
-    sections.append(f'<section><h2>{cat}<span class="cnt">{len(items)}</span></h2><div class="grid">' + ''.join(items) + '</div></section>')
+    sections.append(f'<section><h2>{cat}<span class="cnt">{len(items)}</span></h2><div class="grid">' + ''.join(t[2] for t in items) + '</div></section>')
 
 page = f'''<!DOCTYPE html>
 <html lang="zh-CN">
